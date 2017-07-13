@@ -25,7 +25,15 @@ $(document).on("pageinit",function(event){
             location.href = "welcome/detail";
         });
 
-        $("#mine div:last-child").on("tap",function(){
+        $("#user_detail").on("tap",function(){
+            location.href = "user/user_detail";
+        });
+
+        $("#logout").on("tap",function(){
+            location.href = "user/logout";
+        });
+
+        $("#login").on("tap",function(){
             location.href="user/login_page";
         });
     });

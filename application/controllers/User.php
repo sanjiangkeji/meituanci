@@ -13,6 +13,7 @@ class User extends CI_Controller
     {
         parent::__construct();
         $this -> load -> model("user_model");
+        $this -> load -> model("order_model");
     }
 
     public function login_page(){
@@ -29,7 +30,10 @@ class User extends CI_Controller
         $password = $this -> input -> post("password");
         $row = $this -> user_model -> get_by_username_password($username, $password);
         if($row){
-            echo "登录成功";
+            $this->session->set_userdata(array(
+                "userinfo" => $row
+            ));
+            redirect("welcome/index");
         }
         else
         {
@@ -53,5 +57,31 @@ class User extends CI_Controller
         $row = $this -> user_model -> check_username($username);
         if($row) echo "no";
         else echo "yes";
+    }
+    public function logout()
+    {
+        $this->session->unset_userdata('userinfo');
+
+        /*if (isset($_COOKIE['userinfo'])) {
+            delete_cookie('userinfo');
+        }*/
+
+        //var_dump($this->session->userinfo);
+        //die();
+
+        /*redirect("welcome/index", "refresh");*/
+        $this -> load -> view('index');
+    }
+
+    public function user_detail()
+    {
+        $userinfo = $this->session->userdata('userinfo');
+        $user_id = $userinfo -> user_id;
+        $order_list = $this -> order_model -> get_order_by_user_id($user_id);
+        $data = array(
+            'order_list' => $order_list
+        );
+        $this->load->view('user_detail', $data);
+
     }
 }

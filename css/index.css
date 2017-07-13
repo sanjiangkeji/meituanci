@@ -47,11 +47,12 @@
     opacity: 0.8;
 }
 #mine{
-    width: 1.2rem;
-    margin: 0 0.2rem;
     color: #fff;
+    width: 1rem;
+    margin: 0 0.2rem;
+    text-align: center;
 }
-#mine div{
+/*#mine div{
     float: left;
     width: 0.6rem;
     height: 1rem;
@@ -78,7 +79,8 @@
     font-size: .15rem;
     position: absolute;
     bottom: 0.3rem;
-}/*header结束*/
+}*/
+/*header结束*/
 
 .ui-content{
     padding: 0;

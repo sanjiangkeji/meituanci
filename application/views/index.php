@@ -26,9 +26,23 @@
 		<div id="search">
 			<input type="text" name="" placeholder="请输入商家/品类/商圈">
 		</div>
+        <div data-role="popup" id="popupMenu" data-theme="a">
+      <ul data-role="listview" data-inset="true" style="min-width:1rem;">
+        <li><a id="user_detail" href="javascript:;">个人信息</a></li>
+        <li><a id="logout" href="javascript:;">退出登录</a></li>
+      </ul>
+        </div>
 		<div id="mine">
-            <div><span>我的</span></div>
-            <div><span>登录</span></div>
+            <!--<div><span>我的</span></div>
+            <div><span>登录</span></div>-->
+            <?php
+                $userinfo = $this->session->userinfo;
+                if($userinfo != null){
+                    echo "<a href='#popupMenu' data-rel='popup' data-transition='slideup' style='color: #fff;'>". $userinfo -> username ."</a>";
+                }else{
+                    echo "<span id='login'>登录</span>";
+                }
+            ?>
 		</div>
 	</div>
 
