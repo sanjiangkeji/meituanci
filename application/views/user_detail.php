@@ -17,12 +17,22 @@
     <title>Document</title>
 </head>
 <body>
+    <div data-role="popup" id="popupMenu" data-theme="a">
+    <ul data-role="listview" data-inset="true" style="min-width:1rem;">
+      <li><a id="user_detail" href="javascript:;">个人信息</a></li>
+      <li><a id="logout" href="javascript:;">退出登录</a></li>
+    </ul>
+    </div>
     <div id="header">
         <a id="home" href="javascript:;"
            class="ui-btn-inline ui-icon-home ui-btn-left ui-btn-icon-notext">
         </a>
         用户详情
-        <div id="username"><?php echo $this->session->userinfo->username; ?></div>
+        <div id="username">
+            <a href='#popupMenu' data-rel='popup' data-transition='slideup' style='color: #fff;'>
+                <?php echo $this->session->userinfo->username; ?>
+            </a>
+        </div>
     </div>
     <div id="clear"></div>
     <h2 style="float: left;">订单列表</h2>

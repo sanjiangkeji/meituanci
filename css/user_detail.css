@@ -16,9 +16,17 @@
     left: .3rem;
 }
 #username{
+    width: 1.2rem;
     float: right;
     color: #fff;
     margin-right: .2rem;
+    padding-right: .2rem;
+    background: url(../img/downarrow.png) no-repeat center right;
+    -webkit-background-size: 0.32rem 0.32rem;
+    -moz-background-size: 0.32rem 0.32rem;
+    -o-background-size: 0.32rem 0.32rem;
+    -ms-background-size: 0.32rem 0.32rem;
+    background-size: 0.32rem 0.32rem;
 }
 #clear{
     margin-top: 1.02rem;

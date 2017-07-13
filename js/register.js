@@ -17,9 +17,9 @@ $(document).on("pageinit", function(){
             if(res == "no"){
                 $("#is-use").html("用户名已存在！");
             }
-            /*else{
-                $("#is-use").html("用户名可用");
-            }*/
+            else{
+                $("#is-use").html("");
+            }
         })
     });
 
