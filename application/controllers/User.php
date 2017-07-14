@@ -65,12 +65,11 @@ class User extends CI_Controller
         /*if (isset($_COOKIE['userinfo'])) {
             delete_cookie('userinfo');
         }*/
-
         //var_dump($this->session->userinfo);
-        //die();
 
-        /*redirect("welcome/index", "refresh");*/
-        $this -> load -> view('index');
+        //die(); 之后的操作都不执行
+        //$this -> load -> view('index');不行，无法完成从数据库读取数据
+        redirect("welcome/index", "refresh");
     }
 
     public function user_detail()
