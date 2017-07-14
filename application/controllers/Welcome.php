@@ -43,8 +43,6 @@ class Welcome extends CI_Controller {
     public function detail($product_id)
     {
         $row = $this->product_model->get_product_by_id($product_id);
-        /*var_dump($row);
-        die();*/
         $this -> load -> view('detail',array('row'=>$row));
     }
 }

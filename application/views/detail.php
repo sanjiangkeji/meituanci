@@ -51,7 +51,7 @@
         <div id="explain">
             <span class="refund">不支持随时退款</span>
             <span class="refund">支持过期自动退</span><br>
-            <span class="refund">已售148027</span>
+            <span class="refund">已售<?php echo $row->num==null ? 0:$row->num;?></span>
         </div>
         <div id="evaluate-type">
             <div id="star">

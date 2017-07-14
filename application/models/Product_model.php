@@ -19,9 +19,10 @@ class Product_model extends CI_Model
     public function get_product_by_id($product_id){
         /*$query = $this->db->get_where('t_product',array('product_id'=>$product_id));
         return $query->row();*/
-        $this->db->select('pro.*,bus.*');
+        $this->db->select('pro.*,bus.*,sum(order.num) num');
         $this->db->from('t_product pro');
-        $this->db->join('t_business bus', 'bus.business_id = pro.product_id');
+        $this->db->join('t_business bus', 'bus.business_id = pro.business_id');
+        $this->db->join('t_order order', 'order.product_id = pro.product_id');
         $this->db->where('pro.product_id',$product_id);
         $query = $this->db->get();
         return $query->row();
