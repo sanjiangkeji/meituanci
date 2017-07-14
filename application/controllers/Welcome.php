@@ -26,18 +26,25 @@ class Welcome extends CI_Controller {
     }
 	public function index()
 	{
-        $results=$this->product_model->get_product();
+        /*$results=$this->product_model->get_product();
+        //根据product_id累计订单中各商品的数量
+        //使用循环会多次连接数据库，耗资源
+        //可以传入id数组，返回数组（并使其与product关联.........）
+        id:[1,2,3]; -> like -> num:[5,0,3];
         foreach($results as $product)
         {
             $num=$this->order_model->get_count_by_product_id($product->product_id);
-
             $product->num= $num->num==null ? 0:$num->num;
-        }
+        }*/
+        $results=$this->product_model->get_product();
 		$this->load->view('index',array('results'=>$results));
 	}
 
-    public function detail()
+    public function detail($product_id)
     {
-        $this -> load -> view('detail');
+        $row = $this->product_model->get_product_by_id($product_id);
+        /*var_dump($row);
+        die();*/
+        $this -> load -> view('detail',array('row'=>$row));
     }
 }

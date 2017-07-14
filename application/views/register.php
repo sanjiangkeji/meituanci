@@ -20,6 +20,9 @@
 </head>
 <body>
 <div id="header">
+    <div id="left">
+        <img src="img/left-arrow.png" alt="">
+    </div>
     注册
 </div>
 <form method="post" action="user/register" data-ajax="false" id="login-form">

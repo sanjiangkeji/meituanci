@@ -66,7 +66,6 @@ class User extends CI_Controller
             delete_cookie('userinfo');
         }*/
         //var_dump($this->session->userinfo);
-
         //die(); 之后的操作都不执行
         //$this -> load -> view('index');不行，无法完成从数据库读取数据
         redirect("welcome/index", "refresh");

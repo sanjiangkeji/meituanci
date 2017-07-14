@@ -19,6 +19,9 @@
 </head>
 <body>
     <div id="header">
+        <div id="left">
+            <img src="img/left-arrow.png" alt="">
+        </div>
         登录
     </div>
     <form method="post" action="user/login" data-ajax="false" id="login-form">

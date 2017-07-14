@@ -14,8 +14,8 @@ class Order_model extends CI_Model
     }
     public function get_count_by_product_id($product_id)
     {
-        $sql="select sum(num) num from t_order where product_id=$product_id";
+        /*$sql="select sum(num) num from t_order where product_id=$product_id";
         $query=$this->db->query($sql);
-        return $query->row();
+        return $query->row();*/
     }
 }

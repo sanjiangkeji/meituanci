@@ -1,4 +1,8 @@
 $(document).on("pageinit", function(){
+    $("#left img").on("tap", function(){
+        location.href = "welcome/index";
+    });
+
     $("#register_page").on("tap", function(){
         location.href = "user/register_page";
     });

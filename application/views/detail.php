@@ -39,13 +39,13 @@
     <div role="main" class="ui-content">
         <div id="banner">
             <div class="product-name">
-                <p>鲜芋仙</p>
-                <p>10元代金券一份</p>
+                <p><?php echo $row->product_name;?></p>
+                <p><?php echo $row->description;?></p>
             </div>
         </div>
         <div id="price">
-            <span class="preferential-price"><span>7.5</span>元</span>
-            <span>门市价:10元</span>
+            <span class="preferential-price"><span><?php echo $row->discount_price;?></span>元</span>
+            <span>门市价:<?php echo $row->price;?>元</span>
             <button data-inline="true" class="buy">立即购买</button>
         </div>
         <div id="explain">
@@ -84,8 +84,8 @@
             <h3 class="info">商家信息</h3>
             <div class="contact">
                 <div class="address">
-                    <p class="name">鲜芋仙（道外百盛店）</p>
-                    <p class="position">道外区东直路118号百盛购物中心太平桥店1层</p>
+                    <p class="name"><?php echo $row->business_name;?></p>
+                    <p class="position"><?php echo $row->business_address;?></p>
                     <p class="nearest">离我最近</p>
                 </div>
                 <div class="phone"></div>

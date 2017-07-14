@@ -11,11 +11,30 @@
  Target Server Version : 100113
  File Encoding         : utf-8
 
- Date: 07/14/2017 09:17:43 AM
+ Date: 07/14/2017 16:20:33 PM
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+--  Table structure for `t_business`
+-- ----------------------------
+DROP TABLE IF EXISTS `meituan`.`t_business`;
+CREATE TABLE `meituan`.`t_business` (
+  `business_id` int(11) NOT NULL AUTO_INCREMENT,
+  `business_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `business_address` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `business_tel` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`business_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+--  Records of `t_business`
+-- ----------------------------
+BEGIN;
+INSERT INTO `meituan`.`t_business` VALUES ('1', '鲜芋仙', '道外区东直路118号百盛购物中心太平桥店1层', '0451-88888888'), ('2', '麦当劳', '东北林业大学', '010-666');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `t_order`
@@ -38,7 +57,7 @@ CREATE TABLE `meituan`.`t_order` (
 --  Records of `t_order`
 -- ----------------------------
 BEGIN;
-INSERT INTO `meituan`.`t_order` VALUES ('1', '1', '1', '5', '2'), ('2', '1', '2', '10', '3'), ('3', '1', '3', '8', '2');
+INSERT INTO `meituan`.`t_order` VALUES ('1', '1', '1', '5', '2'), ('2', '1', '1', '10', '3'), ('3', '1', '3', '8', '2');
 COMMIT;
 
 -- ----------------------------
@@ -52,6 +71,7 @@ CREATE TABLE `meituan`.`t_product` (
   `description` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `discount_price` varchar(10) COLLATE utf8_bin DEFAULT NULL,
   `img` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `business_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -59,7 +79,7 @@ CREATE TABLE `meituan`.`t_product` (
 --  Records of `t_product`
 -- ----------------------------
 BEGIN;
-INSERT INTO `meituan`.`t_product` VALUES ('1', 'xianyuxian', '8', '[11店通用]10元代金券1份', '6', 'img/xianyuxian.jpg'), ('2', 'KFC', '15', '[12店通用]10元代金券1份', '10', 'img/xianyuxian.jpg'), ('3', '麦当劳', '2', '[13店通用]10元代金券1份', '1', 'img/xianyuxian.jpg');
+INSERT INTO `meituan`.`t_product` VALUES ('1', 'xianyuxian', '8', '[11店通用]10元代金券1份', '6', 'img/xianyuxian.jpg', '1'), ('2', 'KFC', '15', '[12店通用]10元代金券1份', '10', 'img/xianyuxian.jpg', '2'), ('3', '麦当劳', '2', '[13店通用]10元代金券1份', '1', 'img/xianyuxian.jpg', '2');
 COMMIT;
 
 -- ----------------------------

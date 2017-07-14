@@ -22,7 +22,8 @@ $(document).on("pageinit",function(event){
         });
 
         $("#guess #menu li").on("tap",function(){
-            location.href = "welcome/detail";
+            var $product_id=$(this).children(".product-id").val();
+            location.href = "welcome/detail/"+$product_id;
         });
 
         $("#user_detail").on("tap",function(){
