@@ -18,6 +18,25 @@ SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
+--  Table structure for `t_collect`
+-- ----------------------------
+DROP TABLE IF EXISTS `meituan`.`t_collect`;
+CREATE TABLE `meituan`.`t_collect` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `is_delete` int(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+--  Records of `t_collect`
+-- ----------------------------
+BEGIN;
+INSERT INTO `meituan`.`t_collect` VALUES ('6', '1', '2', '0');
+COMMIT;
+
+-- ----------------------------
 --  Table structure for `t_business`
 -- ----------------------------
 DROP TABLE IF EXISTS `meituan`.`t_business`;

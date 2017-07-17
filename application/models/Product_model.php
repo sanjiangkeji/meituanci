@@ -27,4 +27,18 @@ class Product_model extends CI_Model
         $query = $this->db->get();
         return $query->row();
     }
+
+    public function add_collect($user_id,$product_id){
+        $data = array(
+            'user_id' => $user_id,
+            'product_id' => $product_id
+        );
+        $this->db->insert('t_collect', $data);
+        return $this->db->affected_rows();
+    }
+
+    public function get_collect($user_id,$product_id){
+        $query=$this->db->get_where('t_collect',array('user_id'=>$user_id,'product_id'=>$product_id,'is_delete'=>0));
+        return $query->row();
+    }
 }

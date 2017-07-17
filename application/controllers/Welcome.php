@@ -43,6 +43,22 @@ class Welcome extends CI_Controller {
     public function detail($product_id)
     {
         $row = $this->product_model->get_product_by_id($product_id);
+
+        $userinfo = $this->session->userdata('userinfo');
+        if(empty($userinfo))
+        {
+            $row->collected="收藏";
+        }
+        else
+        {
+            $user_id = $userinfo -> user_id;
+            $collect = $this->product_model->get_collect($user_id,$product_id);
+            if($collect != null)
+            {
+                $row->collected="取消";
+            }
+            else $row->collected="收藏";
+        }
         $this -> load -> view('detail',array('row'=>$row));
     }
 }

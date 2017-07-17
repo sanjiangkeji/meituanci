@@ -14,6 +14,7 @@ class User extends CI_Controller
         parent::__construct();
         $this -> load -> model("user_model");
         $this -> load -> model("order_model");
+        $this -> load -> model("product_model");
     }
 
     public function login_page(){
@@ -80,6 +81,18 @@ class User extends CI_Controller
             'order_list' => $order_list
         );
         $this->load->view('user_detail', $data);
+    }
 
+    public function collect(){
+        $userinfo=$this->session->userdata('userinfo');
+        if(empty($userinfo)){
+            echo 'fail';
+        }
+        else{
+            $user_id=$userinfo->user_id;
+            $product_id=$this->input->get("product_id");
+            $row=$this->product_model->add_collect($user_id,$product_id);
+            echo 'success';
+        }
     }
 }
