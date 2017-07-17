@@ -30,7 +30,7 @@
             <div class="navigation">
                 <span>导航</span>
             </div>
-            <div class="<?php if($row->collected == '收藏') echo 'im-collect'; else echo 'collect';?>">
+            <div class="collect <?php if($row->collected == '取消') echo 'collected';?>">
                 <input type="hidden" class="product_id" value=<?php echo $row->product_id;?>>
                 <span><?php echo $row->collected;?></span>
             </div>

@@ -92,6 +92,18 @@ class User extends CI_Controller
             $user_id=$userinfo->user_id;
             $product_id=$this->input->get("product_id");
             $row=$this->product_model->add_collect($user_id,$product_id);
+            if($row>0){
+                echo 'success';
+            }
+        }
+    }
+
+    public function cancel_collect(){
+        $userinfo=$this->session->userdata('userinfo');
+        $user_id=$userinfo->user_id;
+        $product_id=$this->input->get("product_id");
+        $row=$this->product_model->cancel_collect($user_id,$product_id);
+        if($row>0){
             echo 'success';
         }
     }

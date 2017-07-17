@@ -43,15 +43,15 @@
     color: #fff;
 }
 #header #collect .collect{
-    background: url("../img/collected.png") no-repeat center .1rem;
+    background: url("../img/star.png") no-repeat center .1rem;
     -webkit-background-size: 0.5rem 0.5rem;
     -moz-background-size: 0.5rem 0.5rem;
     -o-background-size: 0.5rem 0.5rem;
     -ms-background-size: 0.5rem 0.5rem;
     background-size: 0.5rem 0.5rem;
 }
-#header #collect .im-collect{
-    background: url("../img/star.png") no-repeat center .1rem;
+#header #collect .collected{
+    background: url("../img/collected.png") no-repeat center .1rem;
     -webkit-background-size: 0.5rem 0.5rem;
     -moz-background-size: 0.5rem 0.5rem;
     -o-background-size: 0.5rem 0.5rem;
@@ -66,7 +66,7 @@
     -ms-background-size: 0.35rem 0.35rem;
     background-size: 0.35rem 0.35rem;
 }
-#header #collect .collect , #header #collect .im-collect , #header #collect .navigation{
+#header #collect .collect , #header #collect .collected , #header #collect .navigation{
     float: right;
     margin-right: 0.25rem;
     width: 0.6rem;
@@ -74,7 +74,7 @@
     font-size: 0.1rem;
     position: relative;
 }
-#header #collect .collect span , #header #collect .im-collect span{
+#header #collect .collect span , #header #collect .collected span{
     position: absolute;
     top: .3rem;
     margin-left: .05rem;

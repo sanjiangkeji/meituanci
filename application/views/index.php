@@ -38,7 +38,7 @@
             <?php
                 $userinfo = $this->session->userinfo;
                 if($userinfo != null){
-                    echo "<a href='#popupMenu' data-rel='popup' data-transition='slideup' style='color: #fff;'>". $userinfo -> username ."</a>";
+                    echo "<a href='#popupMenu' data-rel='popup' data-transition='slideup' style='color: #fff;'>". $userinfo -> username ."</a>"." ∨";
                 }else{
                     echo "<span id='login'>登录</span>";
                 }
