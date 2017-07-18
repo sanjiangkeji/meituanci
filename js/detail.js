@@ -26,4 +26,9 @@ $(document).on("pageinit", function(){
             },'text');
         }
     });
+
+    $('#price button').on('tap',function(){
+        var productId = $('.product_id').val();
+        location.href="user/submit_order/"+productId;
+    });
 });

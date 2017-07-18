@@ -107,4 +107,8 @@ class User extends CI_Controller
             echo 'success';
         }
     }
+
+    public function submit_order($product_id){
+        $this->load->view('submit_order',array('product_id'=>$product_id));
+    }
 }
