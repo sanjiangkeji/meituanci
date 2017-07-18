@@ -118,5 +118,45 @@ CREATE TABLE `meituan`.`t_user` (
 BEGIN;
 INSERT INTO `meituan`.`t_user` VALUES ('1', 'admin', '12345'), ('2', 'aa', 'aa'), ('8', 'abc', 'abc'), ('9', 'zz', 'zz'), ('11', 'xx', 'xx'), ('12', 'cc', 'cc'), ('13', 'nn', 'nn');
 COMMIT;
+-- ----------------------------
+--  Table structure for `t_comment`
+-- ----------------------------
+DROP TABLE IF EXISTS `meituan`.`t_comment`;
+CREATE TABLE `meituan`.`t_comment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `content` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `time` datetime DEFAULT NULL,
+  `score` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+--  Records of `t_comment`
+-- ----------------------------
+BEGIN;
+INSERT INTO `meituan`.`t_comment` VALUES ('1', '1', '1', ' 好111111天吃太美好了 啊啊啊啊啊 上瘾上瘾 甜甜甜 甜品真是太好吃 冬天吃热的 夏天吃凉的', '2017-07-13 16:03:19', '4'), ('2', '2', '1', '好22222夏天吃太美好了 啊啊啊啊啊 上瘾上瘾 甜甜甜 甜品真是太好吃 冬天吃热的 夏天吃凉的', '2017-07-18 16:04:18', '5'), ('3', '1', '2', '不好吃不好吃 夏天吃太美好了 啊啊啊啊啊 上瘾上瘾 甜甜甜 甜品真是太好吃 冬天吃热的 夏天吃凉的', '2017-07-18 16:04:29', '1');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `t_comment_img`
+-- ----------------------------
+DROP TABLE IF EXISTS `meituan`.`t_comment_img`;
+CREATE TABLE `meituan`.`t_comment_img` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `path` varchar(255) DEFAULT NULL,
+  `comment_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+--  Records of `t_comment_img`
+-- ----------------------------
+BEGIN;
+INSERT INTO `meituan`.`t_comment_img` VALUES ('1', 'img/item1.jpg', '1'), ('2', 'img/item2.jpg', '1'), ('3', 'img/item1.jpg', '2');
+COMMIT;
+
+
 
 SET FOREIGN_KEY_CHECKS = 1;

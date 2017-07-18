@@ -28,7 +28,14 @@ $(document).on("pageinit", function(){
     });
 
     $('#price button').on('tap',function(){
-        var productId = $('.product_id').val();
-        location.href="user/submit_order/"+productId;
+        $.get('user/check_logined',{},function(data){
+            if(data == 'yes'){
+                var productId = $('.product_id').val();
+                location.href="user/submit_order/"+productId;
+            }
+            else{
+                location.href="user/login_page";
+            }
+        },'text');
     });
 });

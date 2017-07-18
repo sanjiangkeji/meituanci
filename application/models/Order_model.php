@@ -18,4 +18,15 @@ class Order_model extends CI_Model
         $query=$this->db->query($sql);
         return $query->row();*/
     }
+
+    public function add_order($user_id,$product_id,$price,$num){
+        $data = array(
+            'user_id' => $user_id,
+            'product_id' => $product_id,
+            'order_price' => $price,
+            'num'=> $num
+        );
+        $this->db->insert('t_order', $data);
+        return $this->db->affected_rows();
+    }
 }

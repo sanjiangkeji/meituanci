@@ -108,7 +108,30 @@ class User extends CI_Controller
         }
     }
 
+    public function check_logined(){
+        $userinfo = $this->session->userdata('userinfo');
+        if(empty($userinfo)){
+            echo 'no';
+        }else{
+            echo "yes";
+        }
+    }
+
     public function submit_order($product_id){
-        $this->load->view('submit_order',array('product_id'=>$product_id));
+        $product=$this->product_model->get_product_by_id($product_id);
+        $this->load->view('submit_order',array('product'=>$product));
+    }
+
+    public function add_order(){
+        $userinfo=$this->session->userinfo;
+        $user_id=$userinfo->user_id;
+        $price=$this->input->get('price');
+        $num=$this->input->get('num');
+        $product_id=$this->input->get('product_id');
+        $rows=$this->order_model->add_order($user_id,$product_id,$price,$num);
+        if($rows>0){
+            echo "success";
+        }
+        else echo "false";
     }
 }

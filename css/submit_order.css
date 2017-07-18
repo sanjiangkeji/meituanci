@@ -54,8 +54,11 @@
     float: left;
     margin-right: .1rem;
     margin-left: .1rem;
-    border: 0;
+    background-color: #fff;
+    border: 0.1px solid #06c1ae;
     box-shadow: none;
+    padding: 0;
+    color: #06c1ae;
 }
 .order-form #num div{/*input上套的div*/
     float: left;
@@ -65,4 +68,11 @@
     padding: 0;
     min-height: 2em;
     width: .8rem;
+}
+.clear{
+    clear: both;
+}
+
+#submit{
+    margin-top: .5rem;
 }
