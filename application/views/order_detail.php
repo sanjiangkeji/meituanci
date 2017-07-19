@@ -29,23 +29,6 @@
         </div>
     </div>
     <div role="main" class="ui-content">
-        <!--<ul id="menu">
-            <?php /*foreach ($results as $product) {*/?>
-                <li>
-                    <input type="hidden" class="product-id" value=<?php /*echo $product->product_id;*/?>>
-                    <img src="<?php /*echo $product->img;*/?>" alt="" class="brand">
-                    <div class="detail">
-                        <p class="detail-name"><?php /*echo $product->product_name;*/?></p>
-                        <p class="detail-desc"><?php /*echo $product->description;*/?></p>
-                        <div>
-                            <span class="price"><?php /*echo $product->discount_price;*/?>元</span>
-                            <span>门市价:<?php /*echo $product->price;*/?>元</span>
-                            <span class="sold">已售<?php /*echo $product->num==null ? 0:$product->num; */?></span>
-                        </div>
-                    </div>
-                </li>
-            <?php /*}*/?>
-        </ul>-->
         <ul id="menu">
             <li>
             <input type="hidden" class="product_id" value=<?php echo $row->product_id;?>>

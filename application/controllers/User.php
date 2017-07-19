@@ -134,4 +134,8 @@ class User extends CI_Controller
         }
         else echo "false";
     }
+
+    public function comment(){
+        $this->load->view('comment');
+    }
 }
