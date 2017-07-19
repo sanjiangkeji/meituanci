@@ -28,6 +28,17 @@ class Product_model extends CI_Model
         return $query->row();
     }
 
+    public function get_product_by_id2($product_id,$user_id){
+        $this->db->select('pro.*,sum(order.num) num');
+        $this->db->from('t_product pro');
+        $this->db->join('t_order order', 'order.product_id = pro.product_id');
+        //$this->db->join('t_user user', 'order.user_id = user.user_id');
+        $this->db->where('pro.product_id',$product_id);
+        //$this->db->where('user.user_id',$user_id);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
     public function add_collect($user_id,$product_id){
         $data = array(
             'user_id' => $user_id,

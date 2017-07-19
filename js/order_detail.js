@@ -5,4 +5,9 @@ $(document).on("pageinit", function(){
     $("#header #home").on("tap", function(){
         location.href = "welcome";
     });
+
+    $('.arrow').on('tap',function(){
+        var productId=$("#menu .product_id").val();
+        location.href = "welcome/detail/"+productId;
+    });
 });

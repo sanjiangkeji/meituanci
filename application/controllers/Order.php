@@ -25,7 +25,11 @@ class Order extends CI_Controller {
         $this -> load -> model("order_model");
     }
 
-    public function order_detail(){
-        $this->load->view("order_detail");
+    public function order_detail($product_id){
+        $userinfo = $this->session->userdata('userinfo');
+        $user_id=$userinfo->user_id;
+        $row=$this->product_model->get_product_by_id2($product_id,$user_id);
+        $row2=$this->order_model->get_order_by_user_id_and_product_id($user_id,$product_id);
+        $this->load->view("order_detail",array('row'=>$row,'row2'=>$row2));
     }
 }

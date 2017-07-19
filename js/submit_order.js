@@ -50,6 +50,7 @@ $(document).on("pageinit", function(){
         },function(data){
             if(data == "success") {
                 alert("下单成功");
+                location.href="order/order_detail/"+productId;
             }
             else alert("下单失败");
         },'text');

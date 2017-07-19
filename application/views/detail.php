@@ -162,7 +162,9 @@
                             <img src="img/star-yellow.png" alt="">
                             <img src="img/star-yellow.png" alt="">
                             <img src="img/star-gray.png" alt="">-->
-                            <div class="score_star1"><div class="score_star2" style="width: <?php echo $comment->score * 20;?>%;"></div></div>
+                            <div class="score_star1">
+                                <div class="score_star2" style="width: <?php echo $comment->score * 20;?>%;"></div>
+                            </div>
                             <span class="date"><?php echo $comment->time?></span>
                         </div>
                         <img src="img/earnest.png" alt="" class="earnest">
