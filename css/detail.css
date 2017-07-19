@@ -173,11 +173,35 @@
 #evaluate-type #star{
     padding: .2rem .2rem;
     border-bottom: 1px solid #ccc;
+
 }
-#evaluate-type #star img{
+#evaluate-type #star .avg_star1 , #evaluate .evaluate-title .star .avg_star1{
+    position: relative;
+    display: inline-block;
+    width: 1.7rem;
+    height: .3rem;
+    background: url("../img/score-star1.png") no-repeat;
+    -webkit-background-size: 1.7rem 0.3rem;
+    -moz-background-size: 1.7rem 0.3rem;
+    -o-background-size: 1.7rem 0.3rem;
+    -ms-background-size: 1.7rem 0.3rem;
+    background-size: 1.7rem 0.3rem;
+}
+#evaluate-type #star .avg_star2 , #evaluate .evaluate-title .star .avg_star2{
+    position: absolute;
+    display: inline-block;
+    height: .3rem;
+    background: url("../img/score-star2.png") no-repeat;
+    -webkit-background-size: 1.7rem 0.3rem;
+    -moz-background-size: 1.7rem 0.3rem;
+    -o-background-size: 1.7rem 0.3rem;
+    -ms-background-size: 1.7rem 0.3rem;
+    background-size: 1.7rem 0.3rem;
+}
+/*#evaluate-type #star img{
     width: 0.32rem;
     height: 0.32rem;
-}
+}*/
 #evaluate-type #star .score{
     color: #ff9712;
     font-weight: bold;
@@ -376,10 +400,10 @@
 #evaluate .evaluate-title .star{
     float: right;
 }
-#evaluate .evaluate-title .star img{
+/*#evaluate .evaluate-title .star img{
     width: 0.32rem;
     height: 0.32rem;
-}
+}*/
 
 
 #evaluate .item .item-title{
@@ -400,9 +424,33 @@
     float: left;
     padding-left: .2rem;
 }
-#evaluate .item .item-title .desc img{
+/*#evaluate .item .item-title .desc img{
     width: 0.32rem;
     height: 0.32rem;
+}*/
+#evaluate .item .item-title .score_star1{
+    margin-top: .1rem;
+    position: relative;
+    display: inline-block;
+    width: 1.5rem;
+    height: .28rem;
+    background: url("../img/score-star1.png") no-repeat;
+    -webkit-background-size: 1.5rem 0.28rem;
+    -moz-background-size: 1.5rem 0.28rem;
+    -o-background-size: 1.5rem 0.28rem;
+    -ms-background-size: 1.5rem 0.28rem;
+    background-size: 1.5rem 0.28rem;
+}
+#evaluate .item .item-title .score_star2{
+    position: absolute;
+    display: inline-block;
+    height: .28rem;
+    background: url("../img/score-star2.png") no-repeat;
+    -webkit-background-size: 1.5rem 0.28rem;
+    -moz-background-size: 1.5rem 0.28rem;
+    -o-background-size: 1.5rem 0.28rem;
+    -ms-background-size: 1.5rem 0.28rem;
+    background-size: 1.5rem 0.28rem;
 }
 #evaluate .item .item-title .earnest{
     width: 1rem;

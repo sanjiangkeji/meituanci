@@ -56,13 +56,16 @@
         </div>
         <div id="evaluate-type">
             <div id="star">
+                <!--<img src="img/star-yellow.png" alt="">
                 <img src="img/star-yellow.png" alt="">
                 <img src="img/star-yellow.png" alt="">
                 <img src="img/star-yellow.png" alt="">
-                <img src="img/star-yellow.png" alt="">
-                <img src="img/star-gray.png" alt="">
-                <span class="score">4.4分</span>
-                <span class="evaluate-num">13962人评价 &gt;</span>
+                <img src="img/star-gray.png" alt="">-->
+                <div class="avg_star1">
+                    <div class="avg_star2" style="width: <?php echo $avg->avg_score * 20;?>%;"></div>
+                </div>
+                <span class="score"><?php echo $avg->avg_score;?>分</span>
+                <span class="evaluate-num"><?php echo $avg->num;?>人评价 &gt;</span>
             </div>
             <div id="type">
                 <span class="hot">回头客797</span>
@@ -135,41 +138,45 @@
             <div class="evaluate-title">
                 <h3>评价</h3>
                 <div class="star">
+                    <!--<img src="img/star-yellow.png" alt="">
                     <img src="img/star-yellow.png" alt="">
                     <img src="img/star-yellow.png" alt="">
                     <img src="img/star-yellow.png" alt="">
-                    <img src="img/star-yellow.png" alt="">
-                    <img src="img/star-gray.png" alt="">
-                    <span class="score">4.4分</span>
+                    <img src="img/star-gray.png" alt="">-->
+                    <div class="avg_star1">
+                        <div class="avg_star2" style="width: <?php echo $avg->avg_score * 20;?>%;"></div>
+                    </div>
+                    <span class="score"><?php echo $avg->avg_score;?>分</span>
                 </div>
             </div>
             <?php foreach ($results as $comment) { ?>
                 <div class="item">
-                <div class="item-title">
-                    <div class="header">
-                        <img src="img/header.jpg" alt="">
+                    <div class="item-title">
+                        <div class="header">
+                            <img src="img/header.jpg" alt="">
+                        </div>
+                        <div class="desc">
+                            <p class="name"><?php echo $comment->username?></p>
+                            <!--<img src="img/star-yellow.png" alt="">
+                            <img src="img/star-yellow.png" alt="">
+                            <img src="img/star-yellow.png" alt="">
+                            <img src="img/star-yellow.png" alt="">
+                            <img src="img/star-gray.png" alt="">-->
+                            <div class="score_star1"><div class="score_star2" style="width: <?php echo $comment->score * 20;?>%;"></div></div>
+                            <span class="date"><?php echo $comment->time?></span>
+                        </div>
+                        <img src="img/earnest.png" alt="" class="earnest">
                     </div>
-                    <div class="desc">
-                        <p class="name"><?php echo $comment->username?></p>
-                        <img src="img/star-yellow.png" alt="">
-                        <img src="img/star-yellow.png" alt="">
-                        <img src="img/star-yellow.png" alt="">
-                        <img src="img/star-yellow.png" alt="">
-                        <img src="img/star-gray.png" alt="">
-                        <span class="date"><?php echo $comment->time?></span>
+                    <div class="item-content">
+                        <?php echo $comment->content?>
                     </div>
-                    <img src="img/earnest.png" alt="" class="earnest">
+                    <div class="item-img clearfix">
+                        <?php foreach ($comment->imgs as $img) { ?>
+                            <img src="<?php echo $img->path;?>" alt="">
+                        <?php } ?>
+                    </div>
+                    <p class="branch">鲜芋仙（新一百店）</p>
                 </div>
-                <div class="item-content">
-                    <?php echo $comment->content?>
-                </div>
-                <div class="item-img clearfix">
-                    <?php foreach ($results->imgs as $img) { ?>
-                        <img src="<?php echo $img->path;?>" alt="">
-                    <?php } ?>
-                </div>
-                <p class="branch">鲜芋仙（新一百店）</p>
-            </div>
             <?php } ?>
             <div class="view-all">查看全部12345条评价</div>
         </div>

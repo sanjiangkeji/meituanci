@@ -45,6 +45,8 @@ class Welcome extends CI_Controller {
     public function detail($product_id)
     {
         $results=$this->comment_model->get_comment($product_id);
+        $avg=$this->comment_model->get_avg_score($product_id);
+
         foreach ($results as $res){
             $imgs = $this->comment_img_model->get_img($res->id);
             $res->imgs = $imgs;
@@ -66,6 +68,6 @@ class Welcome extends CI_Controller {
             }
             else $row->collected="收藏";
         }
-        $this -> load -> view('detail',array('row'=>$row,'results'=>$results));
+        $this -> load -> view('detail',array('row'=>$row,'results'=>$results,'avg'=>$avg));
     }
 }
