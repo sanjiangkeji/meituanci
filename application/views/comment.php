@@ -17,6 +17,7 @@
     <title>订单详情</title>
 </head>
 <body>
+<<<<<<< HEAD
     <div id="header">
         <div id="left">
             <img src="img/left-arrow.png" alt="">
@@ -49,5 +50,21 @@
         </div>
         <button id="submit">发布</button>
     </div>
+=======
+<div id="header">
+    <div id="left">
+        <img src="img/left-arrow.png" alt="">
+    </div>
+    订单评价
+    <div id="home">
+        <a href="javascript:;"
+           class="ui-btn-inline ui-icon-home ui-btn-left ui-btn-icon-notext">
+        </a>
+    </div>
+</div>
+<div role="main" class="ui-content">
+
+</div>
+>>>>>>> origin/master
 </body>
 </html>

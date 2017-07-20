@@ -29,6 +29,7 @@
 
 .ui-content{
     background-color: #fff;
+<<<<<<< HEAD
     margin-top: 1.3rem;
 }
 
@@ -58,4 +59,7 @@
 
 #submit{
     margin-top: .4rem;
+=======
+    margin-top: .8rem;
+>>>>>>> origin/master
 }

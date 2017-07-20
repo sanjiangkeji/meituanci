@@ -12,8 +12,12 @@ $(document).on("pageinit", function(){
     });
 
     $('#grade .comment').on('tap',function(){
+<<<<<<< HEAD
         var productId=$("#menu .product_id").val();
         var orderId=$("#menu .order_id").val();
         location.href = "user/comment/"+productId+'/'+orderId;
+=======
+        location.href = "user/comment";
+>>>>>>> origin/master
     });
 });
