@@ -50,7 +50,6 @@
         </div>
         <button id="submit">发布</button>
     </div>
-=======
 <div id="header">
     <div id="left">
         <img src="img/left-arrow.png" alt="">
@@ -65,6 +64,5 @@
 <div role="main" class="ui-content">
 
 </div>
->>>>>>> origin/master
 </body>
 </html>
