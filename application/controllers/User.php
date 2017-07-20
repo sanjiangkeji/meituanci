@@ -136,7 +136,6 @@ class User extends CI_Controller
         else echo "false";
     }
 
-<<<<<<< HEAD
     public function comment($product_id,$order_id){
         $this->load->view('comment',array('product_id'=>$product_id,'order_id'=>$order_id));
     }
@@ -150,9 +149,8 @@ class User extends CI_Controller
             echo "success";
         }
         else echo "false";
-=======
-    public function comment(){
-        $this->load->view('comment');
->>>>>>> origin/master
     }
+    /*public function comment(){
+        $this->load->view('comment');
+    }*/
 }
