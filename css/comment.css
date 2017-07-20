@@ -29,7 +29,6 @@
 
 .ui-content{
     background-color: #fff;
-<<<<<<< HEAD
     margin-top: 1.3rem;
 }
 
@@ -48,6 +47,7 @@
 }
 .score .grade{
     margin-left: 1rem;
+    color: #f49231;
 }
 /*score结束*/
 
@@ -59,7 +59,5 @@
 
 #submit{
     margin-top: .4rem;
-=======
     margin-top: .8rem;
->>>>>>> origin/master
 }

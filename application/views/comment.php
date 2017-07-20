@@ -17,7 +17,6 @@
     <title>订单详情</title>
 </head>
 <body>
-<<<<<<< HEAD
     <div id="header">
         <div id="left">
             <img src="img/left-arrow.png" alt="">
@@ -31,7 +30,7 @@
     </div>
 
     <div role="main" class="ui-content">
-        <div class="score">
+        <div class="score score1">
             总评
             <div class="star">
                 <img src="img/star-gray.png" alt="" id="img1">
@@ -39,7 +38,40 @@
                 <img src="img/star-gray.png" alt="" id="img3">
                 <img src="img/star-gray.png" alt="" id="img4">
                 <img src="img/star-gray.png" alt="" id="img5">
-                <span class="grade">非常满意</span>
+                <span class="grade"></span>
+            </div>
+        </div>
+        <div class="score score2">
+            环境
+            <div class="star">
+                <img src="img/star-gray.png" alt="" id="img1">
+                <img src="img/star-gray.png" alt="" id="img2">
+                <img src="img/star-gray.png" alt="" id="img3">
+                <img src="img/star-gray.png" alt="" id="img4">
+                <img src="img/star-gray.png" alt="" id="img5">
+                <span class="grade"></span>
+            </div>
+        </div>
+        <div class="score score3">
+            服务
+            <div class="star">
+                <img src="img/star-gray.png" alt="" id="img1">
+                <img src="img/star-gray.png" alt="" id="img2">
+                <img src="img/star-gray.png" alt="" id="img3">
+                <img src="img/star-gray.png" alt="" id="img4">
+                <img src="img/star-gray.png" alt="" id="img5">
+                <span class="grade"></span>
+            </div>
+        </div>
+        <div class="score score4">
+            口味
+            <div class="star">
+                <img src="img/star-gray.png" alt="" id="img1">
+                <img src="img/star-gray.png" alt="" id="img2">
+                <img src="img/star-gray.png" alt="" id="img3">
+                <img src="img/star-gray.png" alt="" id="img4">
+                <img src="img/star-gray.png" alt="" id="img5">
+                <span class="grade"></span>
             </div>
         </div>
         <div id="comment">
@@ -50,19 +82,5 @@
         </div>
         <button id="submit">发布</button>
     </div>
-<div id="header">
-    <div id="left">
-        <img src="img/left-arrow.png" alt="">
-    </div>
-    订单评价
-    <div id="home">
-        <a href="javascript:;"
-           class="ui-btn-inline ui-icon-home ui-btn-left ui-btn-icon-notext">
-        </a>
-    </div>
-</div>
-<div role="main" class="ui-content">
-
-</div>
 </body>
 </html>

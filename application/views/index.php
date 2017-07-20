@@ -28,7 +28,7 @@
 		</div>
         <div data-role="popup" id="popupMenu" data-theme="a">
       <ul data-role="listview" data-inset="true" style="min-width:1rem;">
-        <li><a id="user_detail" href="javascript:;">个人信息</a></li>
+        <li><a id="user_detail" href="javascript:;">我的订单</a></li>
         <li><a id="logout" href="javascript:;">退出登录</a></li>
       </ul>
         </div>

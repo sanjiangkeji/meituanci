@@ -55,7 +55,7 @@
                 <div class="score_star2" style="width: <?php echo isset($row3) ? $row3->score*20:0;?>%;"></div>
             </div>
             <div class="score"><?php echo isset($row3) ? $row3->score:0;?>分</div>
-            <div class="comment">去评价</div>
+            <?php echo isset($row3) ? "":"<div class='comment'>去评价</div>";?>
         </div>
         <div id="detail">
             <h3>订单详情</h3>

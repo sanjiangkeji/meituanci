@@ -140,7 +140,11 @@ class User extends CI_Controller
         $this->load->view('comment',array('product_id'=>$product_id,'order_id'=>$order_id));
     }
 
-    public function add_comment($product_id,$order_id,$score,$content){
+    public function add_comment(){
+        $product_id=$this->input->post("product_id");
+        $order_id=$this->input->post("order_id");
+        $score=$this->input->post("score");
+        $content=$this->input->post("content");
         $userinfo = $this->session->userdata('userinfo');
         $user_id=$userinfo->user_id;
         $rows=$this->comment_model->add_comment($product_id,$order_id,$score,$content,$user_id);
@@ -150,7 +154,4 @@ class User extends CI_Controller
         }
         else echo "false";
     }
-    /*public function comment(){
-        $this->load->view('comment');
-    }*/
 }
