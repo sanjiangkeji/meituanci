@@ -51,6 +51,7 @@
         <tbody>
           <?php foreach ($order_list as $order): ?>
                 <tr>
+                    <input type="hidden" class="order_id" value=<?php echo $order->order_id; ?>>
                     <td><?php echo $order->order_id; ?></td>
                     <td><?php echo $order->product_name; ?></td>
                     <td><?php echo $order->price; ?></td>

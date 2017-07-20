@@ -24,6 +24,15 @@ class Order_model extends CI_Model
         return $query->row();
     }
 
+    public function get_order_by_order_id($order_id){
+        $this->db->select('order.*,user.*,(num*order_price) total');
+        $this->db->from('t_order order');
+        $this->db->join('t_user user', 'order.user_id = user.user_id');
+        $this->db->where('order.order_id',$order_id);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
     public function get_count_by_product_id($product_id)
     {
         /*$sql="select sum(num) num from t_order where product_id=$product_id";
@@ -40,5 +49,11 @@ class Order_model extends CI_Model
         );
         $this->db->insert('t_order', $data);
         return $this->db->affected_rows();
+    }
+
+    public function update_order_by_id($order_id){
+        $this->db->set('status', 0);
+        $this->db->where('order_id', $order_id);
+        $this->db->update('t_order');
     }
 }

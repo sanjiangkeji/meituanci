@@ -29,26 +29,10 @@
         </div>
     </div>
     <div role="main" class="ui-content">
-        <!--<ul id="menu">
-            <?php /*foreach ($results as $product) {*/?>
-                <li>
-                    <input type="hidden" class="product-id" value=<?php /*echo $product->product_id;*/?>>
-                    <img src="<?php /*echo $product->img;*/?>" alt="" class="brand">
-                    <div class="detail">
-                        <p class="detail-name"><?php /*echo $product->product_name;*/?></p>
-                        <p class="detail-desc"><?php /*echo $product->description;*/?></p>
-                        <div>
-                            <span class="price"><?php /*echo $product->discount_price;*/?>元</span>
-                            <span>门市价:<?php /*echo $product->price;*/?>元</span>
-                            <span class="sold">已售<?php /*echo $product->num==null ? 0:$product->num; */?></span>
-                        </div>
-                    </div>
-                </li>
-            <?php /*}*/?>
-        </ul>-->
         <ul id="menu">
             <li>
-            <input type="hidden" class="product_id" value=<?php echo $row->product_id;?>>
+                <input type="hidden" class="product_id" value=<?php echo $row->product_id;?>>
+                <input type="hidden" class="order_id" value=<?php echo $row2->order_id;?>>
                 <img src="<?php echo $row->img;?>" alt="" class="brand">
                 <div class="detail">
                     <p class="detail-name"><?php echo $row->product_name;?></p>
@@ -68,9 +52,9 @@
         </div>
         <div id="grade">
             <div class="score_star1">
-                <div class="score_star2"></div>
+                <div class="score_star2" style="width: <?php echo isset($row3) ? $row3->score*20:0;?>%;"></div>
             </div>
-            <div class="score">0分</div>
+            <div class="score"><?php echo isset($row3) ? $row3->score:0;?>分</div>
             <div class="comment">去评价</div>
         </div>
         <div id="detail">

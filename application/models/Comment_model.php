@@ -16,4 +16,20 @@ class Comment_model extends CI_Model
         $sql="select avg(score) avg_score,count(product_id) num from t_comment where product_id = $product_id";
         return $this->db->query($sql)->row();
     }
+
+    public function add_comment($product_id,$order_id,$score,$content,$user_id){
+        $data = array(
+            'user_id' => $user_id,
+            'product_id' => $product_id,
+            'order_id' => $order_id,
+            'score' => $score,
+            'content'=> $content
+        );
+        $this->db->insert('t_comment', $data);
+        return $this->db->affected_rows();
+    }
+
+    public function get_comment_by_order_id($order_id){
+        return $this->db->get_where('t_comment', array('order_id' => $order_id)) -> row();
+    }
 }

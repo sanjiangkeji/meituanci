@@ -23,13 +23,22 @@ class Order extends CI_Controller {
         parent::__construct();
         $this -> load -> model("product_model");
         $this -> load -> model("order_model");
+        $this -> load -> model("comment_model");
     }
 
     public function order_detail($product_id){
         $userinfo = $this->session->userdata('userinfo');
         $user_id=$userinfo->user_id;
-        $row=$this->product_model->get_product_by_id2($product_id,$user_id);
+        $row=$this->product_model->get_product_by_id2($product_id);
         $row2=$this->order_model->get_order_by_user_id_and_product_id($user_id,$product_id);
-        $this->load->view("order_detail",array('row'=>$row,'row2'=>$row2));
+        $order_id=$row2->order_id;
+        $row3=$this->comment_model->get_comment_by_order_id($order_id);
+        $this->load->view("order_detail",array('row'=>$row,'row2'=>$row2,'row3'=>$row3));
+    }
+    public function order_detail2($order_id){
+        $row2=$this->order_model->get_order_by_order_id($order_id);
+        $row=$this->product_model->get_product_by_id2($row2->product_id);
+        $row3=$this->comment_model->get_comment_by_order_id($order_id);
+        $this->load->view("order_detail",array('row'=>$row,'row2'=>$row2,'row3'=>$row3));
     }
 }

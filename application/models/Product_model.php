@@ -28,7 +28,7 @@ class Product_model extends CI_Model
         return $query->row();
     }
 
-    public function get_product_by_id2($product_id,$user_id){
+    public function get_product_by_id2($product_id){
         $this->db->select('pro.*,sum(order.num) num');
         $this->db->from('t_product pro');
         $this->db->join('t_order order', 'order.product_id = pro.product_id');
