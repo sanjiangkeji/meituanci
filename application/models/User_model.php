@@ -32,4 +32,15 @@ class User_model extends CI_Model
             'username' => $username
         )) -> row();
     }
+
+    //t_collect
+    public function get_products_by_user_id($user_id){
+        $this->db->select('pro.*');
+        $this->db->from('t_collect collect');
+        $this->db->join('t_product pro', 'pro.product_id = collect.product_id');
+        $this->db->where('user_id',$user_id);
+        $this->db->where('is_delete',0);
+        $query = $this->db->get();
+        return $query->result();
+    }
 }

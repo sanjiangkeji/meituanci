@@ -30,6 +30,10 @@ $(document).on("pageinit",function(event){
             location.href = "user/user_detail";
         });
 
+        $("#user_collect").on("tap",function(){
+            location.href = "user/collect_detail";
+        });
+
         $("#logout").on("tap",function(){
             location.href = "user/logout";
         });

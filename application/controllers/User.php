@@ -154,4 +154,12 @@ class User extends CI_Controller
         }
         else echo "false";
     }
+
+    public function collect_detail(){
+        $userinfo=$this->session->userinfo;
+        $user_id=$userinfo->user_id;
+        $products=$this->user_model->get_products_by_user_id($user_id);
+        $results=$this->product_model->get_product();
+        $this->load->view('collect_detail',array('results'=>$products));
+    }
 }
